@@ -4,6 +4,15 @@ This project is a C++ client for the OpenAI API. It uses the Boost.Asio library 
 
 Please note that this project is a work in progress and may contain errors. I program as a hobby, and while I strive to produce quality code, there may be issues that I haven't encountered or addressed. I welcome any feedback or contributions that can help improve the project.
 
+## Features
+
+- Connects to the OpenAI API using secure HTTPS connections.
+- Sends and receives messages in a conversation with the OpenAI API.
+- Handles connection errors and attempts to reconnect if the connection is lost.
+- Retrieves the OpenAI API key from an environment variable for security.
+- Uses the Boost.Asio library for networking and OpenSSL for SSL, demonstrating usage of these libraries in a real-world application.
+- Early implementation of "Function Calling" in the conversation with the OpenAI API.
+
 ## Prerequisites
 
 - A modern C++ compiler with C++14 support
