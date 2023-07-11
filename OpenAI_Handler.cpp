@@ -237,12 +237,23 @@ std::string OpenAI_Conversation::sendMessage(const std::string& message, const b
 
 	// Extract the assistant's message from the response and add it to the history.
 	json response_json = json::parse(responseBody);
-	std::string assistant_message = response_json["choices"][0]["message"]["content"];
+
+	std::string assistant_message;
+
+	// Check if the content field is null
+	if (response_json["choices"][0]["message"]["content"].is_null()) {
+		// If content is null, there's a function call, extract it
+		assistant_message = response_json["choices"][0]["message"]["function_call"]["name"];
+	}
+	else {
+		// If content is not null, extract the message content as usual
+		assistant_message = response_json["choices"][0]["message"]["content"];
+	}
 
 	// get the token information from the response
 
-
 	history.push_back({ "assistant", assistant_message });
+
 	std::cout << "==========================================================" << std::endl;
 	std::cout << "Assistant: " << assistant_message << std::endl;
 	std::cout << "==========================================================" << std::endl;
