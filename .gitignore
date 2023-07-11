@@ -10,6 +10,27 @@
 *.userosscache
 *.sln.docstates
 
+# Ignore Visual Studio project files
+*.sln
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.vcxproj.*.user
+*.vcxitems
+*.vcxitems.filters
+*.vcxitems.user
+*.vcxitems.*.user
+*.dbmdl
+*.dbproj.schemaview
+*.pfx
+*.publishsettings
+orleans.codegen.cs
+
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
